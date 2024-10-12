@@ -23,7 +23,7 @@
         }
     %>
     <p>Your choice: <%= userChoice %></p>
-    <p>AI choice: <%= aiChoice %></p>
+    <p>Computer choice: <%= aiChoice %></p>
     <p><%= result %></p>
     <a href="index.jsp">Play again</a>
 </body>
