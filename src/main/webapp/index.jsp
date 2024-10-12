@@ -1,50 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .choice {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 24px;
-        }
-    </style>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Rock, Paper, Scissors!</h1>
-    <div>
-        <button class="choice" onclick="playGame('rock')">Rock</button>
-        <button class="choice" onclick="playGame('paper')">Paper</button>
-        <button class="choice" onclick="playGame('scissors')">Scissors</button>
-    </div>
-    <div id="result"><%= (request.getAttribute("result") != null) ? request.getAttribute("result") : "" %></div>
-    <script>
-        function playGame(playerChoice) {
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = 'result.jsp';
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'playerChoice';
-            input.value = playerChoice;
-            form.appendChild(input);
-            document.body.appendChild(form);
-            form.submit();
-        }
-    </script>
+    <h2>Play Rock-Paper-Scissors</h2>
+    <form action="result.jsp" method="post">
+        <label for="choice">Choose:</label>
+        <select id="choice" name="choice">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+        <input type="submit" value="Play">
+    </form>
 </body>
 </html>
-
